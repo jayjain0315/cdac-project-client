@@ -33,20 +33,4 @@ export class LoginComponent implements OnInit {
 			this.loadingData = false;
 		});
 	}
-
-	automaticLogin(loginAs) {
-		const user = new User();
-		user.password = 'test';
-		if (loginAs === 'electionOfficial') {
-			user.email = 'admin';
-		} else if (loginAs === 'partyHead') {
-			user.email = 'partyHead';
-		} else if (loginAs === 'candidate') {
-			user.email = 'candidate';
-		} else if (loginAs === 'voter') {
-			user.email = 'voter';
-		}
-		this.user = user;
-		this.login();
-	}
 }
