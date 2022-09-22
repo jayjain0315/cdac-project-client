@@ -328,7 +328,7 @@ export class ElectionDetailsComponent implements OnInit, OnDestroy {
 
 				// sort the winning candidates
 				election.districts[i].winningCandidatesSorted.sort((a, b) => {
-					return a.numOfVotes >= b.numOfVotes ? 0 : 1;
+					return a.numOfVotes >= b.numOfVotes ? -1 : 1;
 				});
 
 				// if archivedElection and winnerTakesAll then check if re-round is required

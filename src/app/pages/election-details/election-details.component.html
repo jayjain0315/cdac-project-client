@@ -603,15 +603,17 @@
                                   "
                                   [ngClass]="
                                     winningCandidateIndex === 0
-                                      ? 'success'
+                                      ? 'bg-success'
                                       : winningCandidateIndex === 1
-                                      ? 'warning'
+                                      ? 'bg-warning'
                                       : winningCandidateIndex === 2
-                                      ? 'danger'
+                                      ? 'bg-danger'
                                       : ''
                                   "
                                 >
-                                  <td>{{ winningCandidate._id.name }}</td>
+                                  <td>
+                                    {{ winningCandidate._id.name }}
+                                  </td>
                                   <td>{{ winningCandidate.numOfVotes }}</td>
                                   <td>{{ winningCandidate.partyName }}</td>
                                   <td
