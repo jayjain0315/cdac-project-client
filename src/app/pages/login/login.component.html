@@ -1,0 +1,34 @@
+<div class="app-loading-img" *ngIf="loadingData"></div>
+<br>
+<div align="center">
+	<button class="btn btn-success top-buttons" (click)="automaticLogin('electionOfficial')">Login as admin</button>
+	<button class="btn btn-success top-buttons" (click)="automaticLogin('partyHead')">Login as party head</button>
+	<button class="btn btn-success top-buttons" (click)="automaticLogin('candidate')">Login as candidate</button>
+	<button class="btn btn-success top-buttons" (click)="automaticLogin('voter')">Login as voter</button>
+</div>
+<div>
+	<div class="container">
+		<div class="center-app">
+			<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<div class="account-wall">
+					<form class="form-signin" #loginForm="ngForm" (ngSubmit)="login()">
+						<div class="alert alert-danger" style="margin: 0 30px 0 30px" *ngIf="errorMessage">
+							{{errorMessage}}
+						</div>
+						<img class="profile-img" src="assets/elect-logo.png" alt="">
+						<h1 class="text-center login-title">Login</h1>
+						<br>
+						<input type="text" class="form-control form-elem" placeholder="Email" required autofocus tabindex="1"
+						       [(ngModel)]="user.email" name="email">
+						<input type="password" class="form-control" placeholder="Password" required tabindex="2"
+						       [(ngModel)]="user.password" name="password">
+						<button class="btn btn-lg btn-primary btn-block btn-sign" type="submit" tabindex="5">
+							Sign in
+						</button>
+						<a [routerLink]="['/register']" class="text-center new-account">Create an account </a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
