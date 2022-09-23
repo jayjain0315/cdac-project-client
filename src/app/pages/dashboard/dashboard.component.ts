@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 	currentElections: Election[];
 	futureElections: Election[];
 	pastElections: Election[];
+	voterElections : boolean = false;
 
 	constructor(private router: Router, private electionService: ElectionService, private userService: UserService) {
 		this.loginSubscription = userService.loggedInChange.subscribe((value) => {
@@ -36,6 +37,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
 			if (this.user.role === 'voter' && this.user.city!=''){
 					this.electionService.getElectionsByDistrict(this.user.city).then((elections: Election[]) => {
 					this.elections = elections;
+					let flag = 0;
+					if (this.elections.length>0){
+						this.elections.forEach((election)=>{
+							election.districts.forEach((district)=>{
+								if (district.name==this.user.city){
+									flag+=1;
+								}
+							})
+						})
+					}
+					if (flag>0){
+						this.voterElections = true;
+					}
 					this.currentElections = [];
 					this.futureElections = [];
 					this.pastElections = [];
