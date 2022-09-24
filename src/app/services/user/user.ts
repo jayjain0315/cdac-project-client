@@ -19,6 +19,7 @@ export class User {
 	lastActiveAt: Date;
 	createdAt: Date;
 	modifiedAt: Date;
+	voterId:string;
 
 	constructor(user: User = {} as User) {
 		this._id = user._id;
@@ -31,6 +32,7 @@ export class User {
 		this.country = user.country;
 		this.postalCode = user.postalCode;
 		this.role = user.role;
+		this.voterId = user.voterId;
 		this.lastActiveAt = new Date(user.lastActiveAt);
 		this.createdAt = new Date(user.createdAt);
 		this.modifiedAt = new Date(user.modifiedAt);

@@ -23,6 +23,15 @@
           >{{ selectedRole }}</span
         >
       </span>
+      <span
+        class="navbar-brand"
+        style="padding-top: 30px; font-size: x-small"
+        *ngIf="loggedIn && voterId && selectedRole == 'voter'"
+      >
+        <span style="background-color: #083e54; color: whitesmoke; padding: 3px"
+          >VoterId: {{ voterId }}</span
+        >
+      </span>
     </div>
     <div id="navbar">
       <ul class="nav navbar-brand navbar-right">
