@@ -60,6 +60,8 @@
   height: 60px;
   display: block;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .need-help {
@@ -113,4 +115,22 @@
 
 .parentCont {
   position: relative;
+}
+
+.button-content {
+  display: flex;
+  width: 50%;
+  margin: auto;
+}
+
+.btn-ali {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.btn-cen {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
